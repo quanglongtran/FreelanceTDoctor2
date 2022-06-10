@@ -1,0 +1,407 @@
+@font-face {
+    font-weight: 700;
+    font-family: iCielPanton-Bold;
+    src: url(/fonts/Panton/iCielPanton-Bold.ttf)
+}
+
+.bac-si-page .bac-si-page__header {
+    background-size: cover;
+    background-position: 50%;
+    padding: 100px 0 150px;
+    background-repeat: no-repeat;
+    background-image: url(/public/register_doctor/header_background.png)
+}
+
+.bac-si-page .bac-si-page__header h1 {
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--color-4);
+    font-family: iCielPanton-Bold
+}
+
+@media (min-width: 767px) {
+    .bac-si-page .bac-si-page__header h1 span {
+        display: block
+    }
+}
+
+@media (max-width: 768px) {
+    .bac-si-page .bac-si-page__header {
+        position: relative;
+        background-position: left 61% center
+    }
+
+    .bac-si-page .bac-si-page__header:before {
+        top: 0;
+        left: 0;
+        content: "";
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        background-color: hsla(0, 0%, 100%, .2)
+    }
+}
+
+.bac-si-page .bac-si-page__philosophy {
+    padding: 50px 0
+}
+
+.bac-si-page .bac-si-page__philosophy > .container > h2 {
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 49px;
+    text-align: center;
+    margin-bottom: 10px
+}
+
+.bac-si-page .bac-si-page__philosophy > .container > p {
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    margin-bottom: 40px
+}
+
+.bac-si-page .bac-si-page__philosophy .philosophy__item .philosophy__image {
+    width: 118px;
+    height: 118px;
+    display: block;
+    margin: 0 auto 12px
+}
+
+.bac-si-page .bac-si-page__philosophy .philosophy__item .philosophy__title {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 33px;
+    margin-bottom: 6px
+}
+
+.bac-si-page .bac-si-page__philosophy .philosophy__item .philosophy__content {
+    font-size: 14px;
+    line-height: 24px;
+    text-align: justify
+}
+
+.bac-si-page .bac-si-page__benefit {
+    padding: 50px 0;
+    background-color: var(--color-6)
+}
+
+.bac-si-page .bac-si-page__benefit h2 {
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 49px;
+    text-align: center;
+    margin-bottom: 40px
+}
+
+.bac-si-page .bac-si-page__benefit h2 strong {
+    font-weight: 700;
+    color: var(--color-4)
+}
+
+.bac-si-page .bac-si-page__benefit .benefit__item {
+    display: -webkit-box;
+    display: flex;
+    margin-bottom: 60px
+}
+
+.bac-si-page .bac-si-page__benefit .benefit__item .benefit__image {
+    height: 150px;
+    -webkit-box-flex: 0;
+    flex: 0 0 150px;
+    max-width: 150px;
+    margin: 25px 41px 30px 30px
+}
+
+.bac-si-page .bac-si-page__benefit .benefit__item .benefit__title {
+    font-size: 24px;
+    line-height: 33px;
+    font-weight: 700;
+    margin-bottom: 6px
+}
+
+.bac-si-page .bac-si-page__benefit .benefit__item .benefit__content {
+    text-align: justify
+}
+
+@media (max-width: 768px) {
+    .bac-si-page .bac-si-page__benefit .benefit__item {
+        display: block;
+        text-align: center
+    }
+}
+
+.bac-si-page .bac-si-page__doctor {
+    padding: 50px 0
+}
+
+.bac-si-page .bac-si-page__doctor > .container > h2 {
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 49px;
+    text-align: center;
+    margin-bottom: 10px
+}
+
+.bac-si-page .bac-si-page__doctor > .container > h2 strong {
+    font-weight: 700
+}
+
+.bac-si-page .bac-si-page__doctor > .container > p {
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    margin-bottom: 40px
+}
+
+.bac-si-page .bac-si-page__doctor .doctor__list .doctor__item {
+    display: block
+}
+
+.bac-si-page .bac-si-page__doctor .doctor__list .doctor__item .doctor__avatar {
+    width: 120px;
+    height: 120px;
+    display: block;
+    border-radius: 50%;
+    margin: 0 auto 20px
+}
+
+.bac-si-page .bac-si-page__doctor .doctor__list .doctor__item .doctor__name {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: center
+}
+
+.bac-si-page .bac-si-page__doctor .doctor__list .doctor__item .doctor__specialities {
+    display: block;
+    padding-left: 0;
+    text-align: center;
+    list-style: none inside
+}
+
+.bac-si-page .bac-si-page__doctor .doctor__list .doctor__item .doctor__specialities li {
+    font-size: 14px;
+    display: inline-block
+}
+
+.bac-si-page .bac-si-page__doctor .doctor__list .doctor__item .doctor__specialities li:not(:last-child):after {
+    content: ", ";
+    display: inline-block
+}
+
+.bac-si-page .bac-si-page__doctor .doctor__list .owl-nav .owl-next, .bac-si-page .bac-si-page__doctor .doctor__list .owl-nav .owl-prev {
+    top: 30%;
+    width: 18px;
+    height: 33px;
+    position: absolute;
+    outline: none !important;
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-image: url(/icons/blue-carousel-arrow.png)
+}
+
+.bac-si-page .bac-si-page__doctor .doctor__list .owl-nav .owl-next span, .bac-si-page .bac-si-page__doctor .doctor__list .owl-nav .owl-prev span {
+    display: none
+}
+
+.bac-si-page .bac-si-page__doctor .doctor__list .owl-nav .owl-next.disabled, .bac-si-page .bac-si-page__doctor .doctor__list .owl-nav .owl-prev.disabled {
+    background-image: url(/icons/grey-carousel-arrow.png)
+}
+
+.bac-si-page .bac-si-page__doctor .doctor__list .owl-nav .owl-prev {
+    left: -30px;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg)
+}
+
+.bac-si-page .bac-si-page__doctor .doctor__list .owl-nav .owl-next {
+    right: -30px
+}
+
+.bac-si-page .bac-si-page__doctor .doctor__list .owl-dots {
+    display: block;
+    text-align: center;
+    margin: 0 auto 20px
+}
+
+.bac-si-page .bac-si-page__doctor .doctor__list .owl-dots .owl-dot {
+    width: 11px;
+    height: 11px;
+    margin: 0 5px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: var(--color-4);
+    border: 2px solid var(--color-4)
+}
+
+.bac-si-page .bac-si-page__doctor .doctor__list .owl-dots .owl-dot.active {
+    background-color: #fff
+}
+
+.bac-si-page .bac-si-page__registry {
+    padding: 50px 0;
+    background-color: var(--color-1)
+}
+
+.bac-si-page .bac-si-page__registry > .container > h2 {
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 49px;
+    text-align: center;
+    margin-bottom: 10px
+}
+
+.bac-si-page .bac-si-page__registry > .container > h2 strong {
+    font-weight: 700;
+    color: var(--color-4)
+}
+
+.bac-si-page .bac-si-page__registry > .container > p {
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    margin-bottom: 40px
+}
+
+.bac-si-page .bac-si-page__registry .registry__processes-list {
+    padding-left: 0;
+    list-style: none inside
+}
+
+.bac-si-page .bac-si-page__registry .registry__processes-list .registry__processes-item {
+    display: -webkit-box;
+    display: flex;
+    position: relative;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-bottom: 20px
+}
+
+.bac-si-page .bac-si-page__registry .registry__processes-list .registry__processes-item .registry__processes-image {
+    width: 100%;
+    height: 150px;
+    -webkit-box-flex: 0;
+    flex: 0 1 150px;
+    margin-right: 40px
+}
+
+.bac-si-page .bac-si-page__registry .registry__processes-list .registry__processes-item .registry__processes-title {
+    font-size: 24px;
+    line-height: 33px;
+    font-weight: 700;
+    margin-bottom: 6px
+}
+
+.bac-si-page .bac-si-page__registry .registry__processes-list .registry__processes-item:not(:last-child):after {
+    left: 65px;
+    content: "";
+    width: 18px;
+    height: 33px;
+    bottom: -20px;
+    position: absolute;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-image: url(/icons/blue-carousel-arrow.png)
+}
+
+.bac-si-page .bac-si-page__registry .registry__content-right {
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 30px 20px 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .1)
+}
+
+.bac-si-page .bac-si-page__registry .registry__content-right h3 {
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    margin-bottom: 25px
+}
+
+.bac-si-page .bac-si-page__registry .registry__content-right .form-group:last-child {
+    margin-top: 30px
+}
+
+@media (max-width: 425px) {
+    .bac-si-page > div {
+        padding: 40px 0 !important
+    }
+
+    .bac-si-page > div .container h1, .bac-si-page > div .container h2, .bac-si-page > div .container h3 {
+        font-size: 24px !important;
+        text-align: center;
+        line-height: unset !important
+    }
+
+    .bac-si-page .bac-si-page__header {
+        background-position: left 64% center
+    }
+
+    .bac-si-page .bac-si-page__header h1 {
+        text-align: left !important
+    }
+
+    .bac-si-page .bac-si-page__header a {
+        width: 100%;
+        margin-top: 200px
+    }
+
+    .bac-si-page .bac-si-page__benefit .container > h2, .bac-si-page .bac-si-page__philosophy .container > p {
+        margin-bottom: 20px
+    }
+
+    .bac-si-page .bac-si-page__benefit .container .benefit__image {
+        margin: auto;
+    }
+
+    .bac-si-page .bac-si-page__benefit .container .benefit__item {
+        margin-bottom: 40px
+    }
+
+    .bac-si-page .bac-si-page__doctor .container > p {
+        margin-bottom: 30px
+    }
+
+    .bac-si-page .bac-si-page__registry .container > p {
+        margin-bottom: 20px !important
+    }
+
+    .bac-si-page .bac-si-page__registry .container .registry__processes-item .registry__processes-image {
+        max-width: 100px !important;
+        height: 100px !important;
+        margin-right: 10px !important
+    }
+
+    .bac-si-page .bac-si-page__registry .container .registry__processes-item .registry__processes-info {
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+        -webkit-box-align: start;
+        align-items: flex-start;
+        -webkit-box-pack: center;
+        justify-content: center
+    }
+
+    .bac-si-page .bac-si-page__registry .container .registry__processes-item .registry__processes-info h3, .bac-si-page .bac-si-page__registry .container .registry__processes-item .registry__processes-info p {
+        margin-bottom: 0 !important
+    }
+
+    .bac-si-page .bac-si-page__registry .container .registry__processes-item:after {
+        left: 40px !important;
+        bottom: -25px !important
+    }
+}

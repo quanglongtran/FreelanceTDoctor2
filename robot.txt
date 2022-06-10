@@ -1,0 +1,15 @@
+User-agent: *
+Disallow: /app/
+Disallow: /bootstrap/
+Disallow: /config/
+Disallow: /database/
+Disallow: /FirebaseJWT/
+Disallow: /phpMyAdmin/
+Disallow: /resources/
+Disallow: /ssl/
+Disallow: /storage/
+Disallow: /vendor/
+# Group sitemap
+User-agent: *
+Allow: /
+Sitemap: https://tdoctor.vn/sitemap_index.xml

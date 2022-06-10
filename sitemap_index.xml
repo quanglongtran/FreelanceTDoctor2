@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<sitemap>
+		<loc>https://tdoctor.vn/sitemap_danhmuc.xml</loc>
+	</sitemap>
+	<sitemap>
+		<loc>https://tdoctor.vn/sitemap_danhsach-bs.xml</loc>
+	</sitemap>
+	<sitemap>
+		<loc>https://tdoctor.vn/sitemap_danhsach-csyt.xml</loc>
+	</sitemap>
+	<sitemap>
+		<loc>https://tdoctor.vn/sitemap_danhsach-nhathuoc.xml</loc>
+	</sitemap>
+	<sitemap>
+		<loc>https://tdoctor.vn/sitemap_danhsach-benh.xml</loc>
+	</sitemap>
+	<sitemap>
+		<loc>https://tdoctor.vn/sitemap_danhsach-thuoc.xml</loc>
+	</sitemap>
+	<sitemap>
+		<loc>https://tdoctor.vn/sitemap_danhsach-hoibacsi.xml</loc>
+	</sitemap>
+	<sitemap>
+		<loc>https://tdoctor.vn/sitemap_danhsach-baiviet.xml</loc>
+	</sitemap>
+	<sitemap>
+		<loc>https://tdoctor.vn/sitemap_danhsach-khuyenmai.xml</loc>
+	</sitemap>
+	<sitemap>
+		<loc>https://tdoctor.vn/sitemap_danhsach-tuyendung.xml</loc>
+	</sitemap>
+</sitemapindex>

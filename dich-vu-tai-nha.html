@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>Dịch vụ tại nhà</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+
+    // khi tấm ảnh gần chạm viewport (còn 100px nữa là chạm), thì load tấm ảnh ngay
+    var threshold = 100;
+
+    // tránh vấn đề về performance
+    var timeout;
+
+    function lazyload () {
+        // duyệt tất cả tấm ảnh cần lazy-load
+        var lazyImages = document.querySelectorAll('[lazy]');
+        clearTimeout(timeout);
+
+        timeout = setTimeout(function() {
+            var scrollTop = window.pageYOffset;
+            lazyImages.forEach(function(lazyImage) {
+              var src = lazyImage.dataset.src;
+
+              // khi vị trí tấm ảnh gần chạm viewport, load ngay
+              if (lazyImage.offsetTop < (window.innerHeight + scrollTop + threshold)) {
+                lazyImage.tagName.toLowerCase() === 'iframe'
+                // <img>: copy data-src sang src
+                  ? lazyImage.src = src
+
+                // <div>: copy data-src sang background-image
+                : lazyImage.style.backgroundImage = "url(\'" + src + "\')";
+
+                // copy xong rồi thì bỏ attribute lazy đi
+                lazyImage.removeAttribute('lazy');
+              }
+            });
+
+            // tất cả tấm ảnh đã được load xong, dọn dẹp và đi thôi.
+            if (lazyImages.length == 0) { 
+              document.removeEventListener('scroll', lazyload);
+            }
+        }, 10);
+    }
+
+    
+
+    jQuery(document).ready(function($){
+        setTimeout(function(){
+            lazyload();
+            document.addEventListener('scroll', lazyload);
+        }, 2000);        
+    })
+
+</script>
+<style type="text/css">
+
+body {
+    margin: 0;
+    padding: 0;
+}
+* {
+    box-sizing: border-box;
+}
+
+.wraper {
+    width: 1240px;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden
+}
+.clearfix{
+	clear: both;
+	height: 0;
+	content: "";
+}
+
+.box-logo {
+    max-width: 40%;
+    float: left;
+    padding-right: 30px;
+}
+
+.box-logo img {
+    float: left;
+    width: 55px;
+}
+
+.sologan {
+    float: left;
+    width: calc( 100% - 55px);
+    padding-left: 10px;
+}
+
+
+
+
+.box-search {
+    float: right;
+    padding-top: 12px;
+    position: relative;
+}
+
+.menu-page {
+    float: right;
+}
+
+.menu-page ul li {
+    display: inline-block;
+}
+
+.menu-page ul {
+    margin: 0;
+    padding: 0;
+    margin-top: 18px;
+    padding-left: 55px;
+}
+
+.menu-page ul li a {
+    padding: 12px;
+    color: black;
+}
+
+.menu-page ul li a img {
+    vertical-align: -6px;
+    margin-right: 6px;
+}
+
+.box-search img {
+    position: absolute;
+    right: 5px;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+.box-search input {
+    padding: 10px;
+    min-width: 250px;
+}
+
+.sologan h2 {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #03a9f4;
+}
+
+.sologan span {
+    color: red;
+    font-weight: 600;
+    font-size: 12px;
+    display: block;
+    text-align: center;
+}
+
+.header {
+    padding: 12px 0;
+}
+
+.top-dvnb {
+    text-align: center;
+}
+
+ul.list-dvnb {
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.list-dvnb li {
+    display: inline-block;
+    width: 20%;
+    float: left;
+}
+
+.top-dvnb h2 {
+    text-transform: uppercase;
+    color: #4d97d2;
+    font-style: italic;
+}
+
+body {
+    font-family: Arial;
+}
+
+.box-left-main-item h3 {
+    background-image: linear-gradient(to right ,#f5f7fb, #4d97d2);
+    display: inline-block;
+    margin: 0;
+    padding: 10px;
+    border: 2px solid #91bde0;
+    border-radius: 20px;
+    color: red;
+    min-width: 40%;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+ul.box-item-main {
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul.box-item-main li {
+    width: 50%;
+    float: left;
+    margin: 5px 0;
+    position: relative;
+}
+.contain-box-item {
+    border: 2px solid red;
+    margin: 0 5px;
+}
+
+ul.box-item-main img {
+    float: left;
+    margin: 5px;
+}
+img.hinh-sp {
+    height: 120px;
+}
+
+ul.box-item-main .right-sp img {margin: 0;}
+
+.right-sp span {
+    display: block;
+}
+
+span.main-price {
+    color: red;
+    font-size: 120%;
+    font-weight: 600;
+}
+
+a.mua-ngay {
+    background: red;
+    color: black;
+    padding: 10px;
+    border-radius: 20px;
+    margin-left: 20px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    text-decoration: none;
+}
+
+a.xem-them {}
+
+.box-xemthem {
+    text-align: right;
+}
+
+.box-left-main {
+    width: 80%;
+    float: left;
+    padding-right: 50px;
+}
+
+.box-right-main {
+    width: 20%;
+    float: right;
+}
+
+.box-dich-vu-noi-bat {
+    padding-bottom: 25px;
+}
+
+
+a.goi-ngay, a.dat-ngay {
+    background: #00bcd4;
+    padding: 10px;
+    border-radius: 12px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+a.dat-ngay {
+    background: red;
+    color: black;
+}
+
+.box-kvdv >span {
+    float: left;
+    text-transform: uppercase;
+}
+
+.box-kvdv {
+    margin: 12px 5px;
+    border: 2px solid red;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.chon-dia-chi {
+    float: right;
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+.box-left-main-item1 .contain-box-item {
+    border: 0;
+}
+
+.box-left-main-item-2 .contain-box-item {
+    border: 0 none;
+}
+.contain-box-item iframe {
+    max-width: 100%;
+    height: 200px;
+}
+
+
+a.hotline {
+    background: red;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 12px;
+    margin: 0;
+    text-decoration: none;
+}
+a.hotline-chat img {
+    margin-bottom: -10px;
+    width: 42px;
+}
+
+.box-footer p {position: fixed;bottom: 0;display: inline-block;}
+
+.box-footer {
+    text-align: right;
+    background: red;
+    margin-right: 140px;
+}
+
+ul.slick-dots {
+    bottom: 0px;
+}
+
+.slick-dots li button {
+    width: 10px;
+    padding: 0;
+}
+
+.slick-dots li button:before {
+    font-size: 15px;
+    border: 1px solid #fff;
+    background: transparent;
+    color: transparent;
+    border-radius: 50%;
+    opacity: 1;
+    width: 10px;
+    height: 10px;
+}
+
+.slick-dots li.slick-active button:before {
+    color: transparent;
+    background: #fff;
+    opacity: 1;
+}
+
+.slick-dots li {
+    width: 10px;
+}
+
+/*============tạm ẩn các mục chưa có dịch vụ========*/
+.box-dich-vu-noi-bat {
+    display: none;
+}
+
+.box-right-main {
+    display: none;
+}
+
+.box-left-main {
+    width: 100%;
+    padding: 0;
+}
+/*============tạm ẩn các mục chưa có dịch vụ========*/
+
+/*============response mobile========*/
+
+@media screen and (max-width:  1024px){
+a.dat-ngay {
+    margin-top: 12px;
+    display: inline-block;
+}
+.box-footer p {
+    display: block;
+}
+
+}
+@media screen and (max-width:  767px){
+
+
+.header {
+    width: 100%;
+}
+
+.wraper > div {
+    width: 100%;
+}
+
+.box-logo {
+    max-width: 100%;
+    float: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-page {
+    float: none;
+    width: 100%;
+}
+
+.menu-page ul {
+    padding: 0;
+}
+
+.menu-page ul li {
+    display: block;
+}
+
+.menu-page ul li a img {
+    position: absolute;
+    left: 0;
+}
+
+.menu-page ul li a {
+    padding-left: 50px;
+    position: relative;
+    margin-left: 10px;
+}
+
+.sologan {
+    text-align: center;
+    float: right;
+}
+.box-search {
+    float: none;
+    text-align: center;
+    width: 100%;
+}
+
+.box-search input {
+    width: calc( 100% - 20px );
+}
+
+.list-dvnb li {
+    width: 49%;
+    float: none;
+}
+
+ul.box-item-main li {
+    width: 100%;
+}
+
+
+
+.box-left-main {
+    width: 100%;
+    float: none;
+    padding: 5px;
+}
+
+.box-left-main-item h3 {
+    font-size: 120%;
+    width: 100%;
+}
+.box-xemthem {
+    margin-bottom: 20px;
+}
+
+.box-xemthem img {
+    max-width: 35px;
+}
+
+.top-dvnb img {
+    max-width: 100%;
+}
+
+a.mua-ngay {
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 7px;
+    bottom: 45px;
+}
+
+.chon-dia-chi {
+    font-size: 16px;
+}
+
+a.goi-ngay, a.dat-ngay {
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 8px;
+}
+
+.box-right-main {
+    width: 100%;
+    float: none;
+}
+
+.box-right-main img {}
+
+.slick-slider img{
+	width: 768px;
+	max-width: 100%;
+}
+
+
+}
+
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.slick-slider').slick({
+  	dots: true,
+  	autoplay: true,
+  	autoplaySpeed: 2000
+  });
+});
+</script>
+</head>
+<body>
+<div class="wraper">
+	<div class="header">
+		<div class="box-logo">
+			<img src="/dvtainha/logo.png" alt="Dịch vụ tại nhà" />
+			<div class="sologan">
+				<h2>Dịch vụ tại nhà</h2>
+				<span>Nhanh - Kịp thời - Tin cậy</span>
+				<span>Vì sức khoẻ của bạn</span>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="menu-page">
+			<ul>
+				<li><a href="#"><img src="/dvtainha/home.png"/>Danh mục</a></li>
+				<li><a href="#">Tư vấn khách hàng</a></li>
+				<li><a href="#"><img src="/dvtainha/tieng-viet.png"/>Tiếng Việt</a></li>
+			</ul>			
+		</div>
+		<div class="box-search">
+			<input type="text" name="s" placeholder="Dược phẩm CODY">
+			<img src="/dvtainha/timkiem.png" alt="Tìm kiếm" />
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div class="slider-section">
+		<div class="slick-slider">
+		  <div><img src="/dvtainha/banner-min.png" alt="Hình ảnh" /></div>
+		  <div><img src="/dvtainha/banner-min.png" alt="Hình ảnh" /></div>
+		  <div><img src="/dvtainha/banner-min.png" alt="Hình ảnh" /></div>
+		</div>
+	</div>
+	<div class="box-dich-vu-noi-bat">
+		<div class="top-dvnb">
+			<h2>Dịch vụ nổi bật</h2>
+			<img src="/dvtainha/dvnb.png">
+		</div>
+		<ul class="list-dvnb">
+			<li><img src="/dvtainha/dvnb1.png"></li>
+			<li><img src="/dvtainha/dvnb2.png"></li>
+			<li><img src="/dvtainha/dvnb3.png"></li>
+			<li><img src="/dvtainha/dvnb4.png"></li>
+			<li><img src="/dvtainha/dvnb5.png"></li>
+			<div class="clearfix"></div>
+		</ul>
+	</div>
+	<div class="box-main-content">
+		<div class="box-left-main">
+			<!-------->
+			<div class="box-left-main-item">
+				<h3>Y tế gia đình</h3>
+				<ul class="box-item-main">
+					<li>
+						<div class="contain-box-item">
+							<img class="hinh-sp" src="/dvtainha/sp/product-1.png">
+							<div class="right-sp">
+								<h4>Máy tạo Oxy 5 lít
+( OZ - 5 - 01PWO)
+Công nghệ Đức</h4>
+								<span>15,000,000đ</span>
+								<span class="main-price">12,500,000đ</span>
+								<img src="/dvtainha/danhgia.png">
+								<a class="mua-ngay" href="https://thegioihomecare.vn/may-tao-oxy-5-0l-owgels/">Mua ngay</a>
+								<div class="clearfix"></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</li>
+					<li>
+						<div class="contain-box-item">
+							<img class="hinh-sp" src="/dvtainha/sp/product-2.png">
+							<div class="right-sp">
+								<h4>Máy tạo Oxy 10 lít
+(OZ - 5- 01GWO)
+Công nghệ Đức</h4>
+								<span>25,000,000đ</span>
+								<span class="main-price">22,500,000đ</span>
+								<img src="/dvtainha/danhgia.png">
+								<a class="mua-ngay" href="https://thegioihomecare.vn/may-tao-oxy-10-lit-oz-5-01gwo/">Mua ngay</a>
+								<div class="clearfix"></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</li>
+					<li>
+						<div class="contain-box-item">
+							<img class="hinh-sp" src="/dvtainha/sp/product-3.png">
+							<div class="right-sp">
+								<h4>Máy đo SpO2
+( JUMPER -500E)</h4>
+								<span>600,000đ</span>
+								<span class="main-price">500,000đ</span>
+								<img src="/dvtainha/danhgia.png">
+								<a class="mua-ngay" href="https://thegioihomecare.vn/may-do-nong-do-oxy-trong-mau-spo2-loai-jumper-500e/">Mua ngay</a>
+								<div class="clearfix"></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</li>
+					<li>
+						<div class="contain-box-item">
+							<img class="hinh-sp" src="/dvtainha/sp/product-4.png">
+							<div class="right-sp">
+								<h4>Máy đo SpO2
+( JUMPER -500D)</h4>
+								<span>800,000đ</span>
+								<span class="main-price">600,000đ</span>
+								<img src="/dvtainha/danhgia.png">
+								<a class="mua-ngay" href="https://thegioihomecare.vn/may-do-nong-do-oxy-trong-mau-spo2-loai-jumper-500d-oled/">Mua ngay</a>
+								<div class="clearfix"></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</li>
+					<li>
+						<div class="contain-box-item">
+							<img class="hinh-sp" src="/dvtainha/sp/product-5.png">
+							<div class="right-sp">
+								<h4>Nhiệt kế điện tử
+( JUMPER -FR202)</h4>
+								<span>550,000đ</span>
+								<span class="main-price">450,000đ</span>
+								<img src="/dvtainha/danhgia.png">
+								<a class="mua-ngay" href="https://thegioihomecare.vn/nhiet-ke-dien-tu-jumper-fr202/">Mua ngay</a>
+								<div class="clearfix"></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</li>
+					<li>
+						<div class="contain-box-item">
+							<img class="hinh-sp" src="/dvtainha/sp/product-6.png">
+							<div class="right-sp">
+								<h4>Nhiệt kế
+( HaChi Đầu mềm)</h4>
+								<span>105,000đ</span>
+								<span class="main-price">90,000đ</span>
+								<img src="/dvtainha/danhgia.png">
+								<a class="mua-ngay" href="https://thegioihomecare.vn/nhiet-ke-hachi-dau-mem/">Mua ngay</a>
+								<div class="clearfix"></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</li>
+					<li>
+						<div class="contain-box-item">
+							<img class="hinh-sp" src="/dvtainha/sp/product-7.png">
+							<div class="right-sp">
+								<h4>Que test nhanh 
+Covid -19
+Humansis - Hàn Quốc</h4>
+								<span>150,000đ</span>
+								<span class="main-price">130,000đ</span>
+								<img src="/dvtainha/danhgia.png">
+								<a class="mua-ngay" href="https://thegioihomecare.vn/que-test-humasis-han-quoc/">Mua ngay</a>
+								<div class="clearfix"></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</li>
+
+					<div class="clearfix"></div>
+				</ul>
+				<div class="box-xemthem"><a class="xem-them" href="#"><img src="/dvtainha/xemthem.png"></a></div>
+			</div>
+			<!-------->			
+			<!-------->
+			<div class="box-left-main-item" style="display: none;">
+				<h3>Sản phẩm hỗ trợ sức khoẻ</h3>
+				<ul class="box-item-main">
+					<li>
+						<div class="contain-box-item">
+							<img src="/dvtainha/hinhsp.png">
+							<div class="right-sp">
+								<h4>Thuốc hạ sốt</h4>
+								<span>250,000đ</span>
+								<span class="main-price">250,000đ</span>
+								<img src="/dvtainha/danhgia.png">
+								<a class="mua-ngay" href="#">Mua ngay</a>
+								<div class="clearfix"></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</li>
+					<li>
+						<div class="contain-box-item">
+							<img src="/dvtainha/hinhsp.png">
+							<div class="right-sp">
+								<h4>Thuốc hạ sốt</h4>
+								<span>250,000đ</span>
+								<span class="main-price">250,000đ</span>
+								<img src="/dvtainha/danhgia.png">
+								<a class="mua-ngay" href="#">Mua ngay</a>
+								<div class="clearfix"></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</li>
+					<li>
+						<div class="contain-box-item">
+							<img src="/dvtainha/hinhsp.png">
+							<div class="right-sp">
+								<h4>Thuốc hạ sốt</h4>
+								<span>250,000đ</span>
+								<span class="main-price">250,000đ</span>
+								<img src="/dvtainha/danhgia.png">
+								<a class="mua-ngay" href="#">Mua ngay</a>
+								<div class="clearfix"></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</li>
+					<li>
+						<div class="contain-box-item">
+							<img src="/dvtainha/hinhsp.png">
+							<div class="right-sp">
+								<h4>Thuốc hạ sốt</h4>
+								<span>250,000đ</span>
+								<span class="main-price">250,000đ</span>
+								<img src="/dvtainha/danhgia.png">
+								<a class="mua-ngay" href="#">Mua ngay</a>
+								<div class="clearfix"></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</li>
+
+					<div class="clearfix"></div>
+				</ul>
+				<div class="box-xemthem"><a class="xem-them" href="#"><img src="/dvtainha/xemthem.png"></a></div>
+			</div>
+			<!-------->
+			<!----Chăm sóc y tế tại nhà---->
+			<div class="box-left-main-item box-left-main-item1" style="display: none;">
+				<h3>Chăm sóc y tế tại nhà</h3>
+				<div class="box-kvdv">
+					<span>Khu vực dịch vụ</span>
+					<div class="chon-dia-chi">
+						<span>Xã/Huyện/Thành phố</span>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<ul class="box-item-main">
+					<li>
+						<div class="contain-box-item">
+							<img src="/dvtainha/hinhsp.png">
+							<div class="right-sp">
+								<h4>Thuốc hạ sốt</h4>
+								<a class="goi-ngay" href="#">Gọi tư vấn</a>
+								<a class="dat-ngay" href="#">Đặt ngay</a>
+								<div class="clearfix"></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</li>
+					<li>
+						<div class="contain-box-item">
+							<img src="/dvtainha/hinhsp.png">
+							<div class="right-sp">
+								<h4>Thuốc hạ sốt</h4>
+								<a class="goi-ngay" href="#">Gọi tư vấn</a>
+								<a class="dat-ngay" href="#">Đặt ngay</a>
+								<div class="clearfix"></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</li>
+					<li>
+						<div class="contain-box-item">
+							<img src="/dvtainha/hinhsp.png">
+							<div class="right-sp">
+								<h4>Thuốc hạ sốt</h4>
+								<a class="goi-ngay" href="#">Gọi tư vấn</a>
+								<a class="dat-ngay" href="#">Đặt ngay</a>
+								<div class="clearfix"></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</li>
+					<li>
+						<div class="contain-box-item">
+							<img src="/dvtainha/hinhsp.png">
+							<div class="right-sp">
+								<h4>Thuốc hạ sốt</h4>
+								<a class="goi-ngay" href="#">Gọi tư vấn</a>
+								<a class="dat-ngay" href="#">Đặt ngay</a>
+								<div class="clearfix"></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</li>
+					<li>
+						<div class="contain-box-item">
+							<img src="/dvtainha/hinhsp.png">
+							<div class="right-sp">
+								<h4>Thuốc hạ sốt</h4>
+								<a class="goi-ngay" href="#">Gọi tư vấn</a>
+								<a class="dat-ngay" href="#">Đặt ngay</a>
+								<div class="clearfix"></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</li>
+					<li>
+						<div class="contain-box-item">
+							<img src="/dvtainha/hinhsp.png">
+							<div class="right-sp">
+								<h4>Thuốc hạ sốt</h4>
+								<a class="goi-ngay" href="#">Gọi tư vấn</a>
+								<a class="dat-ngay" href="#">Đặt ngay</a>
+								<div class="clearfix"></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</li>
+
+					<div class="clearfix"></div>
+				</ul>
+				<div class="box-xemthem"><a class="xem-them" href="#"><img src="/dvtainha/xemthem.png"></a></div>
+			</div>
+			<!-------->
+			<!----Kiến thức cho sức khoẻ---->
+			<div class="box-left-main-item box-left-main-item-2">
+				<h3>Kiến thức cho sức khoẻ</h3>
+				<ul class="box-item-main box-item-main">
+					<li>
+						<div class="contain-box-item">
+							<iframe lazy width="560" height="315" data-src="https://www.youtube.com/embed/ldvcOD_NOQs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							<h5>Một số người đi tiêm vaccine COVID-19 không cần phải đo huyết áp trước khi tiêm</h5>
+							<div class="clearfix"></div>
+						</div>
+					</li>
+					<li>
+						<div class="contain-box-item">
+							<iframe lazy width="560" height="315" data-src="https://www.youtube.com/embed/z76XfaQ-57w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							<h5>Kháng thể COVID 19 truyền từ thai phụ sang con bằng đường sữa mẹ</h5>
+							<div class="clearfix"></div>
+						</div>
+					</li>
+					<li>
+						<div class="contain-box-item">
+							<iframe lazy width="560" height="315" data-src="https://www.youtube.com/embed/dAmZvVNF8dY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							<h5>COVID-19 để lại di chứng cấp tính ở bệnh nhân béo phì</h5>
+							<div class="clearfix"></div>
+						</div>
+					</li>
+					<li>
+						<div class="contain-box-item">
+							<iframe lazy width="560" height="315" data-src="https://www.youtube.com/embed/kTWqX5ef-hQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							<h5>Bệnh nhân tim mạch nên ăn gì để khỏe trong mùa dịch</h5>
+							<div class="clearfix"></div>
+						</div>
+					</li>
+
+					<div class="clearfix"></div>
+				</ul>
+				<div class="box-xemthem"><a class="xem-them" href="#"><img src="/dvtainha/xemthem.png"></a></div>
+			</div>
+			<!-------->
+			<!----Kiến thức cho chuyên môn---->
+			<div class="box-left-main-item box-left-main-item-2">
+				<h3>Kiến thức cho chuyên môn</h3>
+				<ul class="box-item-main box-item-main">
+					<li>
+						<div class="contain-box-item">
+							<iframe lazy width="560" height="315" data-src="https://www.youtube.com/embed/psJlAG7WMrU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							<h5>Bệnh nhân rối loạn nhịp tim cần làm gì khi mắc covid-19?</h5>
+							<div class="clearfix"></div>
+						</div>
+					</li>
+					<li>
+						<div class="contain-box-item">
+							<iframe lazy width="560" height="315" data-src="https://www.youtube.com/embed/qDubqhqymYY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							<h5>Lưu ý cho bệnh nhân tim mạch khi tim vaccine ngừa COVID-19</h5>
+							<div class="clearfix"></div>
+						</div>
+					</li>
+					<li>
+						<div class="contain-box-item">
+							<iframe lazy width="560" height="315" data-src="https://www.youtube.com/embed/1WffmxSP6Yk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							<h5>Chăm sóc bệnh nhân suy tim trong mùa dịch</h5>
+							<div class="clearfix"></div>
+						</div>
+					</li>
+					<li>
+						<div class="contain-box-item">
+							<iframe lazy width="560" height="315" data-src="https://www.youtube.com/embed/EYAGE-AW4kk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							<h5>Bệnh nhân tiểu đường với đại dịch COVID-19</h5>
+							<div class="clearfix"></div>
+						</div>
+					</li>
+
+					<div class="clearfix"></div>
+				</ul>
+				<div class="box-xemthem"><a class="xem-them" href="#"><img src="/dvtainha/xemthem.png"></a></div>
+			</div>
+			<!-------->
+
+		</div>
+		<div class="box-right-main">
+			<img src="/dvtainha/qc.png">
+		</div>
+		<div class="clearfix"></div>
+	</div>
+
+	<div class="box-footer">
+		<p>
+			<a class="hotline" target="_blank" href="https://zalo.me/0983278278">Zalo</a>
+			<a class="hotline" target="_blank" href="https://www.facebook.com/WWW.CODY.COM.VN">Facebook</a>
+			<a class="hotline" href="tel:0983 278 278">Hotline</a>
+		</p>
+	</div>
+</div>
+</body>
+</html>
